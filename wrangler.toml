@@ -1,0 +1,13 @@
+name = "orange-sound-561c"
+main = "src/index.js"
+compatibility_date = "2025-01-17"
+workers_dev = false
+preview_urls = false
+
+[[routes]]
+pattern = "mta-sts.catram.org"
+zone_name = "catram.org"
+custom_domain = true
+
+[observability]
+enabled = true
