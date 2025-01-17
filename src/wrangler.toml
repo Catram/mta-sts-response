@@ -1,0 +1,6 @@
+name = "orange-sound-561c"
+main = "index.js"
+compatibility_date = "2023-08-23"
+
+[unsafe.metadata.observability]
+enabled = true
