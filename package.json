@@ -1,0 +1,14 @@
+{
+    "name": "mta-sts-response",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "deploy": "wrangler deploy",
+        "dev": "wrangler dev",
+        "start": "wrangler dev"
+    },
+    "devDependencies": {
+        "prettier": "^3.6.2",
+        "wrangler": "^4.24.3"
+    }
+}
