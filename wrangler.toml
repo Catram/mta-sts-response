@@ -1,4 +1,4 @@
-name = "orange-sound-561c"
+name = "mta-sts-response"
 main = "src/index.js"
 compatibility_date = "2025-01-17"
 workers_dev = false

@@ -1,6 +1,6 @@
-# mts-sts-response
+# mta-sts-response
 
-This project provides a Node.js package for handling responses in the MTS-STS response.
+This project provides a Node.js package for handling responses in the MTA-STS response.
 
 ## Author
 
