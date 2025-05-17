@@ -4,10 +4,15 @@ compatibility_date = "2025-01-17"
 workers_dev = false
 preview_urls = false
 
-[[routes]]
-pattern = "mta-sts.catram.org"
-zone_name = "catram.org"
-custom_domain = true
+routes = [
+    { pattern = "mta-sts.catram.org", custom_domain = true },
+    { pattern = "mta-sts.catram.com", custom_domain = true },
+    { pattern = "mta-sts.catram.net", custom_domain = true },
+    { pattern = "mta-sts.catram.info", custom_domain = true },
+    { pattern = "mta-sts.danmacu.org", custom_domain = true },
+    { pattern = "mta-sts.danmacu.com", custom_domain = true },
+    { pattern = "mta-sts.danmacu.net", custom_domain = true },
+]
 
 [observability]
 enabled = true
