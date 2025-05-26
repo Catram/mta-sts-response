@@ -4,7 +4,7 @@ This project provides a Node.js package for handling responses in the MTA-STS re
 
 ## Author
 
-* [Yishen Miao](https://github.com/mys721tx)
+- [Yishen Miao](https://github.com/mys721tx)
 
 ## License
 
