@@ -11,7 +11,9 @@
  */
 
 export default {
-  async fetch(request, env, ctx) {
-    return fetch('https://mta-sts.mx.cloudflare.net/.well-known/mta-sts.txt');
-  },
+    async fetch(request, env, ctx) {
+        return fetch(
+            "https://mta-sts.mx.cloudflare.net/.well-known/mta-sts.txt",
+        );
+    },
 };
