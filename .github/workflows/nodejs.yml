@@ -23,3 +23,14 @@ jobs:
               run: |
                   if [ -f package.json ] && grep -q '"test"' package.json; then npm test; fi
                   if [ -f src/package.json ] && grep -q '"test"' src/package.json; then cd src && npm test && cd ..; fi
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        steps:
+            - uses: actions/checkout@v4
+            - name: Deploy to Cloudflare Workers
+              uses: cloudflare/wrangler-action@v3
+              with:
+                  apiToken: ${{ secrets.CF_API_TOKEN }}
