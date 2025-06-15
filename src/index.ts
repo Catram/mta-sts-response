@@ -11,9 +11,9 @@
  */
 
 export default {
-    async fetch(request, env, ctx) {
+    async fetch(request: Request): Promise<Response> {
         return fetch(
             "https://mta-sts.mx.cloudflare.net/.well-known/mta-sts.txt",
         );
     },
-};
+} satisfies ExportedHandler;
