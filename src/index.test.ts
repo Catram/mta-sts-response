@@ -30,4 +30,14 @@ describe("MTA-STS fetch handler", () => {
         const text = await res.text();
         expect(text).toBe("policy-content");
     });
+
+    it("responds 404 for other paths", async () => {
+        vi.spyOn(globalThis, "fetch").mockResolvedValueOnce(mockResponse);
+
+        const req = new Request("https://example.com/other-path");
+        const res = await handler.fetch(req);
+
+        expect(res.status).toBe(404);
+        expect(await res.text()).toBe("Not Found");
+    });
 });
