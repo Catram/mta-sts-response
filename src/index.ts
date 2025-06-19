@@ -12,7 +12,7 @@
 
 export default {
     async fetch(request: Request): Promise<Response> {
-        let url = new URL(request.url);
+        const url = new URL(request.url);
         if (!url.pathname.includes("/.well-known/mta-sts.txt")) {
             return new Response("Not Found", { status: 404 });
         }
