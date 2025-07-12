@@ -44,7 +44,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Commit updated types
-        uses: planetscale/ghcommit-action@v0.1.6
+        uses: planetscale/ghcommit-action@v0.2.15
         with:
           commit_message: |
             chore: regenerate Wrangler types after dependency update
