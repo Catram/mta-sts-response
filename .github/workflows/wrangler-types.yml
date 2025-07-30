@@ -6,7 +6,6 @@ on:
       - "package.json"
       - "package-lock.json"
       - "wrangler.toml"
-  workflow_dispatch:
 
 permissions:
   contents: write
