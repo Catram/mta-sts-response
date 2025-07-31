@@ -79,3 +79,7 @@ jobs:
           branch: update-wrangler-types-${{ github.run_number }}
           branch-suffix: timestamp
           delete-branch: true
+          sign-commits: true
+          signoff: true
+          labels: |
+            javascript
