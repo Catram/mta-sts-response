@@ -1,36 +1,22 @@
 name: Generate Wrangler Types
 
 on:
-  push:
-    paths:
-      - "package.json"
-      - "package-lock.json"
-      - "wrangler.toml"
+  schedule:
+    - cron: "0 12 * * *" # every day at 12:00 UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  wait-for-automerge:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for automerge to complete
-        uses: lewagon/wait-on-check-action@v1.4.0
-        with:
-          ref: ${{ github.ref }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          check-name: "automerge"
-          wait-interval: 30
-          allowed-conclusions: success
-
   generate-types:
     runs-on: ubuntu-latest
-    needs: wait-for-automerge
     steps:
-      - name: Checkout code
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
+          ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js

@@ -9,7 +9,7 @@ permissions:
 jobs:
   wait-for-checks:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'Catram/mta-sts-response'
+    if: (github.event.pull_request.user.login == 'dependabot[bot]' || github.event.pull_request.user.login == 'github-actions[bot]') && github.repository == 'Catram/mta-sts-response'
     steps:
       - name: Wait for Node.js CI to complete
         uses: lewagon/wait-on-check-action@v1.4.0
@@ -19,18 +19,19 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
 
-  dependabot:
+  automerge:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'Catram/mta-sts-response'
+    if: (github.event.pull_request.user.login == 'dependabot[bot]' || github.event.pull_request.user.login == 'github-actions[bot]') && github.repository == 'Catram/mta-sts-response'
     needs: wait-for-checks
     steps:
-      - name: Dependabot metadata
+      - name: Fetch PR metadata (Dependabot only)
+        if: github.event.pull_request.user.login == 'dependabot[bot]'
         id: metadata
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Enable auto-merge for Dependabot PRs
+      - name: Enable auto-merge for automated PRs
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
