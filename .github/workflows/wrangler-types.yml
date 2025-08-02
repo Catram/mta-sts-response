@@ -44,20 +44,10 @@ jobs:
       - name: Format generated types with Prettier
         run: npx prettier --write "*.d.ts"
 
-      - name: Check for changes
-        id: changes
-        run: |
-          if git diff --quiet HEAD -- "*.d.ts"; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-
       - name: Create Pull Request
-        if: steps.changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CI_TRIGGER_TOKEN }}
           commit-message: |
             chore: regenerate Wrangler types with wrangler ${{ steps.wrangler_version.outputs.version }}
 
