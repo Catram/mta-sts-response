@@ -9,7 +9,7 @@ permissions:
 jobs:
   wait-for-checks:
     runs-on: ubuntu-latest
-    if: (github.event.pull_request.user.login == 'dependabot[bot]' || github.event.pull_request.user.login == 'github-actions[bot]') && github.repository == 'Catram/mta-sts-response'
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
       - name: Wait for Node.js CI to complete
         uses: lewagon/wait-on-check-action@v1.4.0
@@ -21,7 +21,6 @@ jobs:
 
   automerge:
     runs-on: ubuntu-latest
-    if: (github.event.pull_request.user.login == 'dependabot[bot]' || github.event.pull_request.user.login == 'github-actions[bot]') && github.repository == 'Catram/mta-sts-response'
     needs: wait-for-checks
     steps:
       - name: Fetch PR metadata (Dependabot only)
