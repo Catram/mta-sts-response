@@ -1,6 +1,6 @@
 name = "mta-sts-response"
 main = "src/index.ts"
-compatibility_date = "2025-11-17"
+compatibility_date = "2026-02-24"
 workers_dev = false
 preview_urls = false
 
