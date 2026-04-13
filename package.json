@@ -15,7 +15,7 @@
         "@eslint/json": "1.2.0",
         "@eslint/markdown": "8.0.1",
         "eslint": "10.2.0",
-        "globals": "17.4.0",
+        "globals": "17.5.0",
         "npm-check-updates": "20.0.1",
         "prettier": "3.8.2",
         "typescript": "6.0.2",
