@@ -10,7 +10,7 @@
         "cf-typegen": "wrangler types"
     },
     "devDependencies": {
-        "@cloudflare/vitest-pool-workers": "0.14.6",
+        "@cloudflare/vitest-pool-workers": "0.14.7",
         "@eslint/js": "10.0.1",
         "@eslint/json": "1.2.0",
         "@eslint/markdown": "8.0.1",
