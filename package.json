@@ -12,7 +12,7 @@
     "devDependencies": {
         "@cloudflare/vitest-pool-workers": "0.16.10",
         "@eslint/js": "10.0.1",
-        "@eslint/json": "1.2.0",
+        "@eslint/json": "2.0.0",
         "@eslint/markdown": "8.0.2",
         "eslint": "10.4.0",
         "globals": "17.6.0",
